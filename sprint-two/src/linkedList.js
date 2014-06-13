@@ -8,25 +8,26 @@ var makeLinkedList = function(){
       list.head = makeNode(value);
       list.tail = list.head;
     }else{
-      list.tail.next = makeNode(value);
+      list.tail.next =makeNode(value);
       list.tail = list.tail.next;
     }
 
   };
 
   list.removeHead = function(){
-    var result = list.head.value;
-    list.head = list.head.next;
+    var result =list.head.value;
+    list.head =list.head.next;
+
     return result;
   };
 
   list.contains = function(target){
-    var magGlass = list.head;
-    while(magGlass.next !== null || magGlass.value === target){
-      if(magGlass.value === target){
+    var node = list.head;
+    while(node.next !== null || node.value === target){
+      if(target === node.value){
         return true;
       }
-      magGlass = magGlass.next;
+      node = node.next;
     }
     return false;
   };
@@ -45,6 +46,4 @@ var makeNode = function(value){
 
 /*
  * Complexity: What is the time complexity of the above functions?
-
- 
  */
